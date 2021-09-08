@@ -85,13 +85,13 @@ else {
 
     <br><br><br><br><br>
 
-<?php if(isset($_POST["val1"])) echo $_POST["val1"] ?>
+<?php //if(isset($_POST["val1"])) echo $_POST["val1"] ?>
 <br>
-<?php if(isset($_POST["val2"])) echo $_POST["val2"] ?>
+<?php //if(isset($_POST["val2"])) echo $_POST["val2"] ?>
 <br>
-<?php if(isset($_POST["val3"])) echo $_POST["val3"] ?>
+<?php //if(isset($_POST["val3"])) echo $_POST["val3"] ?>
 <br>
-<?php if(isset($_POST["val4"])) echo $_POST["val4"] ?>
+<?php //if(isset($_POST["val4"])) echo $_POST["val4"] ?>
     
 
        
