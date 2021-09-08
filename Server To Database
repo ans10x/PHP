@@ -1,0 +1,102 @@
+<?php
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+
+$v1 = $_POST['val1'];
+$v2 = $_POST['val2'];
+$v3 = $_POST['val3'];
+$v4 = $_POST['val4'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "nommas";
+
+// Create connection
+$conn = mysqli_connect ($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+else {
+  $sql = " INSERT INTO iiot (val1, val2, val3, val4)
+  values ( '$v1','$v2','$v3','$v4')";
+
+  if ($conn-> query($sql)){
+    echo "New record is inserted sucessfuly ";
+  }
+  else {
+    echo "ERROR :". $sql ."<br>". $conn->error;
+  }
+  $conn->close();
+}
+
+
+
+}
+
+?>
+<!DOCTYPE html>
+
+
+
+<html>
+
+<p style="text-align:center;">
+    
+    <center> <h1>Nommas</h1>
+</p>
+
+
+<body>
+
+
+
+    
+    <form method="post" action="srdb.php" >
+
+
+    <br><br><br><br><br>
+
+    <center>
+
+
+
+    Value 1 : <input type = "text" name="val1">
+
+    Value 2 : <input type = "text" name="val2">
+
+    <br><br><br>
+
+    Value 3 : <input type = "text" name="val3">    
+
+    Value 4 : <input type = "text" name="val4">
+    
+    <br><br><br>
+
+    <input type="submit" value="Send">
+
+
+    </form>
+
+    </center>
+
+    <br><br><br><br><br>
+
+<?php if(isset($_POST["val1"])) echo $_POST["val1"] ?>
+<br>
+<?php if(isset($_POST["val2"])) echo $_POST["val2"] ?>
+<br>
+<?php if(isset($_POST["val3"])) echo $_POST["val3"] ?>
+<br>
+<?php if(isset($_POST["val4"])) echo $_POST["val4"] ?>
+    
+
+       
+
+</body>
+</html>
+
+  
